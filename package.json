@@ -1,0 +1,47 @@
+{
+  "name": "npm_script_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "develop:browsersync": "sleep 5 && browser-sync 'http://localhost:4000/' '_site' --watch",
+    "css:sass2css": "sass --style=expanded --no-source-map _assets/css:_assets/dist",
+    "css:concat": "concat _assets/dist/*.css _assets/dist/**/*.css --output assets/css/style.css",
+    "css:postcss": "postcss assets/css/style.css --use autoprefixer --map --replace true",
+    "develop:css": "watch 'run-s css:{sass2css,concat}' _assets/css",
+    "develop:js": "webpack --mode development --watch",
+    "develop:jekyll": "sleep 3 && bundle exec jekyll serve",
+    "develop": "bundle exec jekyll clean && run-p develop:{css,js,jekyll,browsersync}",
+    "build:html": "prettier --write _site/*.html _site/**/*.html",
+    "build:css": "run-s css:{sass2css,concat,postcss}",
+    "build:js": "webpack --mode production",
+    "build:jekyll": "JEKYLL_ENV=production bundle exec jekyll build",
+    "build": "run-s build:{html,css,js,jekyll}"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1% in JP",
+    "not dead"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "autoprefixer": "^10.3.1",
+    "babel-loader": "^8.2.2",
+    "babel-preset-minify": "^0.5.1",
+    "browser-sync": "^2.27.5",
+    "concat": "^1.0.3",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^8.3.1",
+    "prettier": "^2.3.2",
+    "sass": "^1.37.5",
+    "watch": "^0.13.0",
+    "webpack": "^5.49.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-merge": "^5.8.0"
+  }
+}

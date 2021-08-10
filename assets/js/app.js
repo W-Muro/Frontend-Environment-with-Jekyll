@@ -1,0 +1,2 @@
+!function(){"use strict";var t=document.querySelector(".counter"),e=["red","blue","green","pink"];setInterval((function(){var n,o,r=t.textContent;r=Number(r)+1,t.textContent=r,t.classList.forEach((function(e){"counter"!==e&&t.classList.remove(e)})),t.classList.add(e[(n=0,o=4,n=Math.ceil(n),o=Math.floor(o),Math.floor(Math.random()*(o-n)+n))])}),1e3),new Promise((function(){}))}();
+//# sourceMappingURL=app.js.map
