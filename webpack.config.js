@@ -1,4 +1,4 @@
-const path  = require("path");
+const path = require("path");
 
 const inputPath = "_assets/main.js";
 const output = {
@@ -25,11 +25,11 @@ const config = {
           options: {
             presets: [
               "@babel/preset-env",
-            ]
-          }
-        }
-      }
-    ]
+            ],
+          },
+        },
+      },
+    ],
   },
 };
 

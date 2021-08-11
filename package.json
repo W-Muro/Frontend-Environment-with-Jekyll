@@ -9,8 +9,8 @@
   "scripts": {
     "develop:browsersync": "sleep 5 && browser-sync 'http://localhost:4000/' '_site' --watch",
     "css:sass2css": "sass --style=expanded --no-source-map _assets/css:_assets/dist",
-    "css:concat": "concat _assets/dist/*.css _assets/dist/**/*.css --output assets/css/style.css",
-    "css:postcss": "postcss assets/css/style.css --use autoprefixer --map --replace true",
+    "css:concat": "concat _assets/dist/*.css _assets/dist/**/*.css --output assets/css/styles.css",
+    "css:postcss": "postcss assets/css/styles.css --use autoprefixer --map --replace true",
     "develop:css": "watch 'run-s css:{sass2css,concat}' _assets/css",
     "develop:js": "webpack --mode development --watch",
     "develop:jekyll": "sleep 3 && bundle exec jekyll serve",
