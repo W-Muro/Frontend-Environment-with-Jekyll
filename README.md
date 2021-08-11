@@ -1,5 +1,3 @@
-# Frontend-Environment-with-Jekyll
-
 ## 注意事項
 - `style.css`はgemなどの干渉を受ける可能性があるのでスタイルシート名に使用しない
 - Sassファイルのコンパイルなどはnpm-scriptsで行うため、_config.ymlに`sass:　sass_dir: _sass`の追記は不要
